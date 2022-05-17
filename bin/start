@@ -1,0 +1,8 @@
+<?php
+use Workerman\Worker;
+define('BASE_PATH', dirname(__DIR__));
+require_once  BASE_PATH."/bin/include.php";
+foreach (glob(__DIR__ . '/start_*.php') as $startFile) {
+    require_once $startFile;
+}
+Worker::runAll();
